@@ -32,9 +32,6 @@ const configs = {
   },
   plugins: [
   ],
-  resolve: {
-    modulesDirectories: ['node_modules', 'bower_components'],
-  },
 };
 
 switch (process.env.NODE_ENV) {
