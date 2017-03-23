@@ -1,6 +1,7 @@
 import 'yuki-createjs';
 import 'babel-polyfill';
 import Ball from './components/Ball';
+import Bar from './components/Bar';
 import win from './constants/window';
 
 window.onload = () => {
@@ -10,6 +11,7 @@ window.onload = () => {
   const stage = new createjs.Stage(canvas);
   createjs.Ticker.setFPS(80);
   canvas.style.backgroundColor = win.style.backgroundColor;
+  new Bar(stage);
   new Ball(stage);
 };
 

@@ -4,6 +4,7 @@ import { createAction } from 'redux-act';
 export const moveToBall = createAction('moveToBall');
 export const movedBall = createAction('movedBall');
 
-export const increaseBallSize = createAction('increaseBallSize');
-export const decreaseBallSize = createAction('decreaseBallSize');
-export const changedBallSize = createAction('changedBallSize');
+// bar
+export const moveRightBar = createAction('moveRightBar');
+export const moveLeftBar = createAction('moveLeftBar');
+export const movedBar = createAction('movedBar');

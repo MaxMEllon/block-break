@@ -2109,6 +2109,10 @@ keyboard-shortcut@^1.2.0:
   dependencies:
     vkeys "^1.1.0"
 
+keyboardjs@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/keyboardjs/-/keyboardjs-2.3.3.tgz#57527a4905dce72dea838ef5d8b166bf9c99bd82"
+
 kind-of@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.1.0.tgz#475d698a5e49ff5e53d14e3e732429dc8bf4cf47"

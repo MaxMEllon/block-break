@@ -5,7 +5,7 @@ import {
   moveToBall,
 } from '../actions';
 
-export default class SampleCircle {
+export default class Ball {
   constructor(stage) {
     this.stage = stage;
     this.updateTime = 4;
@@ -27,6 +27,7 @@ export default class SampleCircle {
     this.updateComponent();
     store.subscribe(this.updateState);
     createjs.Ticker.addEventListener('tick', this.updateComponent);
+    window.$$ball = this.circle;
   }
 
   updateComponent() {
