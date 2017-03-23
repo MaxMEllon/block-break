@@ -2103,6 +2103,12 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
+keyboard-shortcut@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/keyboard-shortcut/-/keyboard-shortcut-1.2.0.tgz#54d6b4a5d2e2e91129d87d98fc6c70f1c2721187"
+  dependencies:
+    vkeys "^1.1.0"
+
 kind-of@^3.0.2:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.1.0.tgz#475d698a5e49ff5e53d14e3e732429dc8bf4cf47"
@@ -3197,6 +3203,10 @@ verror@1.3.6:
   resolved "https://registry.yarnpkg.com/verror/-/verror-1.3.6.tgz#cff5df12946d297d2baaefaa2689e25be01c005c"
   dependencies:
     extsprintf "1.0.2"
+
+vkeys@^1.1.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vkeys/-/vkeys-1.2.0.tgz#983b32161b629a526111648223e0432b6004d39b"
 
 vm-browserify@0.0.4:
   version "0.0.4"

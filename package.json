@@ -33,6 +33,7 @@
     "babel-polyfill": "^6.23.0",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
+    "keyboard-shortcut": "^1.2.0",
     "lodash": "^4.17.4",
     "redux": "^3.6.0",
     "redux-act": "^1.1.1",
