@@ -1,0 +1,43 @@
+{
+  "name": "createjs-webpack-babel-redux-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/MaxMEllon/createjs-webpack-babel-redux-boilerplate.git",
+  "author": "MaxMEllon <maxmellon1994@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --watch",
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint src/"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-eslint": "^7.2.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "eslint-plugin-import": "^2.2.0",
+    "exports-loader": "^0.6.4",
+    "imports-loader": "^0.7.1",
+    "webpack": "1",
+    "webpack-dev-server": "1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "lodash": "^4.17.4",
+    "redux": "^3.6.0",
+    "redux-act": "^1.1.1",
+    "redux-logger": "^2.10.2",
+    "redux-saga": "^0.14.3",
+    "yuki-createjs": "^0.0.3"
+  }
+}

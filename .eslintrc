@@ -1,0 +1,16 @@
+extends: airbnb/base
+parser: babel-eslint
+
+env:
+  es6: true
+  node: true
+  mocha: true
+
+globals:
+  createjs: false
+  window: false
+  document: false
+
+rules:
+  class-methods-use-this: [0]
+  no-new: [0]
