@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import store from '../store';
 import { initialState } from '../reducers';
 import binder from '../utils/binder';
@@ -5,6 +6,8 @@ import {
   moveLeftBar,
   moveRightBar,
 } from '../actions';
+
+let prevDone = true;
 
 export default class Bar {
   constructor(stage) {
@@ -28,10 +31,14 @@ export default class Bar {
     document.addEventListener('keydown', (e) => {
       switch (e.keyCode) {
         case 37: // LEFT
-          store.dispatch(moveLeftBar({ bar: this.state }));
+          if (prevDone) store.dispatch(moveLeftBar({ bar: this.state }));
+          prevDone = false;
+          _.delay(() => (prevDone = true), 100);
           break;
         case 39: // RIGHT
           store.dispatch(moveRightBar({ bar: this.state }));
+          prevDone = false;
+          _.delay(() => (prevDone = true), 100);
           break;
         default:
           break;
