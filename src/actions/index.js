@@ -1,4 +1,4 @@
 import { createAction } from 'redux-act';
 
-export const sample = createAction('SAMPLE');
-export const afterSample = createAction('afterSample');
+export const moveToBall = createAction('moveToBall');
+export const movedBall = createAction('movedBall');

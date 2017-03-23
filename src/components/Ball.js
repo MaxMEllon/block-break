@@ -1,13 +1,15 @@
+import _ from 'lodash';
 import store from '../store';
-import { sample } from '../actions';
+import { initialState } from '../reducers';
+import { moveToBall } from '../actions';
 import binder from '../utils/binder';
 
 export default class SampleCircle {
   constructor(stage) {
     this.stage = stage;
+    this.updateTime = 10;
     this.state = {
-      x: 100,
-      y: 100,
+      ...initialState.ball,
     };
     binder(this);
     this.mount();
@@ -15,10 +17,9 @@ export default class SampleCircle {
 
   mount() {
     this.circle = new createjs.Shape();
-    this.circle.graphics.beginFill('DeepSkyBlue').drawCircle(0, 0, 50);
+    this.circle.graphics.beginFill('DeepSkyBlue').drawCircle(0, 0, this.state.size);
     this.circle.x = this.state.x;
     this.circle.y = this.state.y;
-    this.circle.addEventListener('click', this.handleClick);
     this.stage.addChild(this.circle);
     this.mounted();
   }
@@ -26,13 +27,15 @@ export default class SampleCircle {
   mounted() {
     store.subscribe(this.shouldUpdateComponent);
     this.updateComponent();
+    store.dispatch(moveToBall({ ball: this.state }));
   }
 
   shouldUpdateComponent() {
     const state = store.getState();
-    if (this.$diffState(state.sample)) {
-      this.$mergeState(state.sample);
+    if (this.$diffState(state.ball)) {
+      this.$mergeState(state.ball);
       this.updateComponent();
+      _.delay(() => store.dispatch(moveToBall({ ball: state.ball })), this.updateTime);
     }
   }
 
@@ -42,16 +45,19 @@ export default class SampleCircle {
     this.stage.update();
   }
 
-  handleClick() {
-    store.dispatch(sample());
-  }
-
   $mergeState(nextState) {
     this.state.x = nextState.x;
     this.state.y = nextState.y;
+    this.state.dx = nextState.dx;
+    this.state.dy = nextState.dy;
   }
 
   $diffState(nextState) {
-    return !(this.state.x === nextState.x && this.state.y === nextState.y);
+    return !(
+      this.state.x === nextState.x &&
+      this.state.y === nextState.y &&
+      this.state.dx === nextState.dx &&
+      this.state.dy === nextState.dy
+    );
   }
 }
