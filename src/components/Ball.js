@@ -15,11 +15,11 @@ export default class Ball {
   }
 
   mount() {
-    this.circle = new createjs.Shape();
-    this.circle.graphics.beginFill('DeepSkyBlue').drawCircle(0, 0, this.state.size);
-    this.circle.x = this.state.x;
-    this.circle.y = this.state.y;
-    this.stage.addChild(this.circle);
+    this.ball = new createjs.Shape();
+    this.ball.graphics.beginFill('DeepSkyBlue').drawCircle(0, 0, this.state.size);
+    this.ball.x = this.state.x;
+    this.ball.y = this.state.y;
+    this.stage.addChild(this.ball);
     this.mounted();
   }
 
@@ -27,15 +27,15 @@ export default class Ball {
     this.updateComponent();
     store.subscribe(this.updateState);
     createjs.Ticker.addEventListener('tick', this.updateComponent);
-    window.$$ball = this.circle;
+    window.$$ball = this.ball;
   }
 
   updateComponent() {
     const state = store.getState();
     const { x, y, size } = this.state;
-    this.circle.x = x;
-    this.circle.y = y;
-    this.circle.graphics.command.radius = size;
+    this.ball.x = x;
+    this.ball.y = y;
+    this.ball.graphics.command.radius = size;
     this.stage.update();
     store.dispatch(moveToBall({ ball: state.ball }));
   }
